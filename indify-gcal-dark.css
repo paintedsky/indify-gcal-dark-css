@@ -1,0 +1,106 @@
+/* ==UserStyle==
+@name         Indify Google Calendar Widget - Dark Mode Tweaks
+@namespace    github.com/paintedsky/indify-gcal-dark-css/
+@description  Better contrast and readability for the Indify Google Calendar widget.
+@author       paintedsky <hello@paintedsky.ca> (https://github.com/paintedsky)
+@homepageURL  https://github.com/paintedsky/indify-gcal-dark-css/
+@supportURL   https://github.com/paintedsky/indify-gcal-dark-css/issues
+@updateURL    https://userstyles.world/api/style/2.user.css
+@version      1.0
+@license      MIT
+@preprocessor stylus
+*/
+
+@-moz-document url-prefix("https://indify.co/widgets/live/calendar/") {
+:root {
+    --text-color:   #ffffff;
+    --border-color: #3d3d3d;
+    --accent-dark:  #262626;
+    --accent-dim:   #143a4e;
+    --accent-bright:#2c9963;
+}
+
+/* ==== Toolbar ==== */
+
+.calDarkMode .rbc-toolbar button {
+    border-color: var(--border-color);
+}
+
+.rbc-toolbar button.rbc-active, 
+.rbc-toolbar button:active,
+.rbc-toolbar button:hover {
+    background: var(--border-color);
+}
+
+.rbc-toolbar button.rbc-active span, 
+.rbc-toolbar button:active span,
+.rbc-toolbar button:hover span {
+    color: var(--text-color);
+}
+
+.rbc-toolbar button.rbc-active svg path, 
+.rbc-toolbar button:active svg path,
+.rbc-toolbar button:hover svg path {
+    fill: var(--text-color) !important;
+}
+
+/* ==== General ==== */
+
+.calDarkMode .rbc-current-time-indicator, 
+.calDarkMode .rbc-now a {
+    background: var(--accent-bright) !important;
+}
+ 
+.calDarkMode .rbc-event {
+    background: var(--accent-dim);
+}
+
+.calDarkMode .rbc-event .rbc-event-content {
+    color: var(--text-color);
+}
+
+/* ==== Month View ==== */
+
+.calDarkMode .rbc-month-view,
+.calDarkMode .rbc-month-row,
+.calDarkMode .rbc-header,
+.calDarkMode .rbc-day-bg {
+    border-color: var(--border-color);
+}
+
+.calDarkMode .rbc-month-row .rbc-off-range-bg {
+    background: var(--accent-dark);
+}
+
+/* ==== Week & Daily View ==== */
+
+.calDarkMode .rbc-time-view,
+.calDarkMode .rbc-time-view .rbc-time-header,
+.calDarkMode .rbc-time-view .rbc-time-header-content,
+.calDarkMode .rbc-time-view .rbc-time-content,
+.calDarkMode .rbc-time-view .rbc-timeslot-group,
+.calDarkMode .rbc-time-view .rbc-events-container,
+.calDarkMode .rbc-time-view .rbc-current-time-indicator {
+    border-color: var(--border-color);
+}
+
+.calDarkMode .rbc-time-view .rbc-events-container .rbc-event {
+    padding: 5px;
+}
+
+/* ==== Agenda View ==== */
+
+.calDarkMode .rbc-agenda-view .rbc-agenda-content {
+    border: none !important;
+}
+
+.calDarkMode .rbc-agenda-view table.rbc-agenda-table,
+.calDarkMode .rbc-agenda-view table.rbc-agenda-table thead>tr>th,
+.calDarkMode .rbc-agenda-view table.rbc-agenda-table tbody>tr>td {
+    border: 1px solid var(--border-color);
+}
+
+.calDarkMode .rbc-agenda-view table.rbc-agenda-table thead>tr>th {
+    background: var(--accent-dark);
+}
+}
